@@ -9,17 +9,19 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText,
     required this.keyBoardType,
     this.suffix,
-    required this.labelText,
+     this.labelText,
     required this.validatorText,
     this.onFieldSubmitted,
     this.hasOnSubmitted = false,
     this.fillColor = const Color(0xffF6F6F6),
-    this.labelColor = Colors.grey, this.style,
+    this.labelColor = Colors.grey,
+    this.style,
+    this.hintText,
   });
 
   final TextEditingController controller;
   final TextInputType keyBoardType;
-  final String labelText;
+  final String? labelText;
   final Widget? suffix;
   final Function? onFieldSubmitted;
   final bool hasOnSubmitted;
@@ -28,18 +30,19 @@ class CustomTextFormField extends StatelessWidget {
   final Color fillColor;
   final Color labelColor;
   final TextStyle? style;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-        obscureText: obscureText?? false,
+        obscureText: obscureText ?? false,
         controller: controller,
-        style: const TextStyle(fontSize: 14,color: Colors.black26),
+        style: const TextStyle(fontSize: 14, color: Colors.black26),
         keyboardType: keyBoardType,
         onFieldSubmitted: hasOnSubmitted
             ? (value) {
-          onFieldSubmitted!();
-        }
+                onFieldSubmitted!();
+              }
             : null,
         validator: (value) {
           if (value!.isEmpty) {
@@ -48,11 +51,10 @@ class CustomTextFormField extends StatelessWidget {
           return null;
         },
         decoration: InputDecoration(
+          labelText: labelText,
           suffixIcon: suffix,
           focusedBorder: outLineInputBorder(),
-          label: Text(
-            labelText,
-          ),
+          hintText: hintText,
           labelStyle: TextStyle(color: labelColor),
           fillColor: fillColor,
           filled: true,
