@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../../core/utlis/styles.dart';
 
 class ShareProfileView extends StatelessWidget {
@@ -10,7 +9,6 @@ class ShareProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        //
         children: [
           Row(
             children: [
