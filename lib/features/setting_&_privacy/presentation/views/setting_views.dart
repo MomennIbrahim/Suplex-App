@@ -1,8 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
+import 'package:suplex/core/widgets/back_icon.dart';
+import 'package:suplex/features/setting_&_privacy/presentation/views/account_screen.dart';
+import 'package:suplex/features/setting_&_privacy/presentation/views/privacy_security.dart';
+import 'package:suplex/features/setting_&_privacy/presentation/views/share_profile_view.dart';
 
 class SettingViews extends StatelessWidget {
   const SettingViews({super.key});
@@ -17,7 +23,7 @@ class SettingViews extends StatelessWidget {
             gapH(MediaQuery.sizeOf(context).height * 0.075),
             Row(
               children: [
-                SvgPicture.asset("assets/images/arrow-back.svg"),
+               const BackIcon(),
                 Expanded(
                     child: Text(
                   "Setting",
@@ -27,40 +33,52 @@ class SettingViews extends StatelessWidget {
               ],
             ),
             gapH(20.h),
-            customContainerSetting(text: "Account"),
+            customContainerSetting(text: "Account", onPressed: () {
+              push(context: context, widget: const AccountView());
+            }),
             gapH(20.h),
-            customContainerSetting(text: "Privacy & Securety"),
+            customContainerSetting(
+                text: "Privacy & Securety", onPressed: () {
+              push(context: context, widget: const PrivacyAndSecurityView());
+            }),
             gapH(20.h),
-            customContainerSetting(text: "Share Profile"),
+            customContainerSetting(text: "Share Profile", onPressed: () {
+              push(context: context, widget: const ShareProfileView());
+
+            }),
           ],
         ),
       ),
     );
   }
 
-  Widget customContainerSetting({required String text}) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      width: double.maxFinite,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-                spreadRadius: 2,
-                offset: const Offset(0, 2),
-                blurRadius: 7,
-                color: Colors.grey[400]!),
-          ]),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            text,
-            style: Styles.style17W600,
-          ),
-          const Icon(Icons.keyboard_arrow_right)
-        ],
+  Widget customContainerSetting(
+      {required String text, required void Function() onPressed}) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        width: double.maxFinite,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.r),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                  spreadRadius: 2,
+                  offset: const Offset(0, 2),
+                  blurRadius: 7,
+                  color: Colors.grey[400]!),
+            ]),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              text,
+              style: Styles.style17W600,
+            ),
+            const Icon(Icons.keyboard_arrow_right)
+          ],
+        ),
       ),
     );
   }

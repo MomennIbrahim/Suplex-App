@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:suplex/features/chat/presentation/views/chat_view.dart';
-import 'package:suplex/features/friends/presentation/screens/friends_view.dart';
 import 'package:suplex/features/home/presentation/views/home_view.dart';
 import 'package:suplex/features/profile/presentation/views/profile_view.dart';
 import '../../../../core/constance.dart';
+import 'features/friends/presentation/views/friends_view.dart';
 
 class CustomBottomNav extends StatefulWidget {
   const CustomBottomNav({super.key});

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
+import 'package:suplex/features/friends/presentation/views/reels_view.dart';
 import '../../../../core/constance.dart';
 import '../../../../core/utlis/styles.dart';
 
@@ -181,15 +183,20 @@ class FriendsView extends StatelessWidget {
             ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => AspectRatio(
-                aspectRatio: 16 / 20,
-                child: Container(
-                  width: double.maxFinite,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                              "https://techcrunch.com/wp-content/uploads/2022/06/reels-templates.png"))),
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: (){
+                  push(context: context, widget: const ReelsView());
+                },
+                child: AspectRatio(
+                  aspectRatio: 16 / 20,
+                  child: Container(
+                    width: double.maxFinite,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                                "https://techcrunch.com/wp-content/uploads/2022/06/reels-templates.png"))),
+                  ),
                 ),
               ),
               separatorBuilder: (context, index) => gapH(10.h),

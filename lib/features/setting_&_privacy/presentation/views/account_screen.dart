@@ -6,8 +6,8 @@ import 'package:suplex/core/utlis/styles.dart';
 import 'package:suplex/core/widgets/custom_button.dart';
 import 'package:suplex/core/widgets/custom_text_form_field.dart';
 
-class AccountScreen extends StatelessWidget {
-  const AccountScreen({super.key});
+class AccountView extends StatelessWidget {
+  const AccountView({super.key});
 
   @override
   Widget build(BuildContext context) {

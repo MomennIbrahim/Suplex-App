@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suplex/core/constance.dart';
+import 'package:suplex/features/friends/presentation/views/reels_view.dart';
+import 'package:suplex/features/home/presentation/views/home_view.dart';
 import 'package:suplex/features/setting_&_privacy/presentation/views/blocked_account.dart';
+import 'package:suplex/features/setting_&_privacy/presentation/views/setting_views.dart';
+
+import 'bottom_nv.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +37,8 @@ class MyApp extends StatelessWidget {
                   ColorScheme.fromSeed(seedColor: Constance.kPrimaryColor),
               useMaterial3: true,
             ),
-            home: const BlockedAccountScreen());
+            home: const CustomBottomNav(),
+        );
       },
     );
   }

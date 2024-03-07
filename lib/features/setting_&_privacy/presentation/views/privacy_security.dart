@@ -5,17 +5,17 @@ import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
 import 'package:suplex/core/widgets/custom_button.dart';
 
-class PrivacyAndSecurityScreen extends StatefulWidget {
-  const PrivacyAndSecurityScreen({super.key});
+class PrivacyAndSecurityView extends StatefulWidget {
+  const PrivacyAndSecurityView({super.key});
 
   @override
-  State<PrivacyAndSecurityScreen> createState() =>
-      _PrivacyAndSecurityScreenState();
+  State<PrivacyAndSecurityView> createState() =>
+      _PrivacyAndSecurityViewState();
 }
 
 bool isSwitched = false;
 
-class _PrivacyAndSecurityScreenState extends State<PrivacyAndSecurityScreen> {
+class _PrivacyAndSecurityViewState extends State<PrivacyAndSecurityView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
