@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:suplex/bottom_nv.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
 import 'package:suplex/core/widgets/custom_button.dart';
 import 'package:suplex/core/widgets/custom_text_form_field.dart';
 import 'package:suplex/features/auth/presentation/screens/register_view.dart';
-import 'package:suplex/features/profile/presentation/views/profile_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -64,7 +64,7 @@ class LoginView extends StatelessWidget {
               Align(
                   alignment: Alignment.centerRight,
                   child: CustomButton(text: "Sign In", onPressed: () {
-                    push(context: context, widget: const ProfileView());
+                    push(context: context, widget: const CustomBottomNav());
                   })),
               TextButton(
                   onPressed: () {

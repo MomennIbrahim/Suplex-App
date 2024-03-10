@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
+import 'package:suplex/core/widgets/back_icon.dart';
 import 'package:suplex/core/widgets/custom_button.dart';
+import 'package:suplex/features/setting_&_privacy/presentation/views/blocked_account.dart';
 
 class PrivacyAndSecurityView extends StatefulWidget {
   const PrivacyAndSecurityView({super.key});
 
   @override
-  State<PrivacyAndSecurityView> createState() =>
-      _PrivacyAndSecurityViewState();
+  State<PrivacyAndSecurityView> createState() => _PrivacyAndSecurityViewState();
 }
 
 bool isSwitched = false;
@@ -26,10 +27,10 @@ class _PrivacyAndSecurityViewState extends State<PrivacyAndSecurityView> {
             gapH(MediaQuery.sizeOf(context).height * 0.075),
             Row(
               children: [
-                SvgPicture.asset("assets/images/arrow-back.svg"),
+                const BackIcon(),
                 Expanded(
                   child: Text(
-                    "Edit Profile",
+                    "Privacy & Securety",
                     style: Styles.style19,
                     textAlign: TextAlign.center,
                   ),
@@ -58,7 +59,7 @@ class _PrivacyAndSecurityViewState extends State<PrivacyAndSecurityView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Activty status', style: Styles.style19),
+                Text('Activity status', style: Styles.style19),
                 Switch(
                     thumbColor: MaterialStateProperty.all(Colors.white),
                     activeColor: Colors.green,
@@ -73,11 +74,13 @@ class _PrivacyAndSecurityViewState extends State<PrivacyAndSecurityView> {
               ],
             ),
             gapH(60),
-            customContainerSetting(text: "Comment"),
+            customContainerSetting(text: "Comment",onTap: (){}),
             gapH(20),
-            customContainerSetting(text: "Story"),
+            customContainerSetting(text: "Story",onTap: (){}),
             gapH(20),
-            customContainerSetting(text: "Blocked Account"),
+            customContainerSetting(text: "Blocked Account",onTap: (){
+              push(context: context, widget: const BlockedAccountView(),withNav: false);
+            }),
             gapH(15),
             Align(
               alignment: Alignment.centerLeft,
@@ -91,29 +94,32 @@ class _PrivacyAndSecurityViewState extends State<PrivacyAndSecurityView> {
   }
 }
 
-Widget customContainerSetting({required String text}) {
-  return Container(
-    padding: const EdgeInsets.all(10),
-    width: double.maxFinite,
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30.r),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-              spreadRadius: 2,
-              offset: const Offset(0, 2),
-              blurRadius: 7,
-              color: Colors.grey[400]!),
-        ]),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          text,
-          style: Styles.style17W600,
-        ),
-        const Icon(Icons.keyboard_arrow_right)
-      ],
+Widget customContainerSetting({required String text,required void Function()? onTap}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      padding: const EdgeInsets.all(10),
+      width: double.maxFinite,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30.r),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+                spreadRadius: 2,
+                offset: const Offset(0, 2),
+                blurRadius: 7,
+                color: Colors.grey[400]!),
+          ]),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            text,
+            style: Styles.style17W600,
+          ),
+          const Icon(Icons.keyboard_arrow_right)
+        ],
+      ),
     ),
   );
 }

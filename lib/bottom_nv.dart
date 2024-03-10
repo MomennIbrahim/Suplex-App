@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:suplex/features/chat/presentation/views/chat_view.dart';
+import 'package:suplex/features/chat/presentation/views/inbox_view.dart';
 import 'package:suplex/features/home/presentation/views/home_view.dart';
 import 'package:suplex/features/profile/presentation/views/profile_view.dart';
+
 import '../../../../core/constance.dart';
 import 'features/friends/presentation/views/friends_view.dart';
 
@@ -27,23 +28,22 @@ class _ProfileViewState extends State<CustomBottomNav> {
           HomeView(),
           FriendsView(),
           FriendsView(),
-          ChatView(),
+          InboxView(),
           ProfileView(),
         ],
         items: [
           PersistentBottomNavBarItem(
             icon: Icon(
               Icons.home_outlined,
-              color: index == 0? Constance.kPrimaryColor : Colors.white70,
-              size:  35.r,
+              color: index == 0 ? Constance.kPrimaryColor : Colors.white70,
+              size: 35.r,
             ),
           ),
           PersistentBottomNavBarItem(
               icon: SvgPicture.asset(
-                "assets/images/friends.svg",
-                color: index == 1? Constance.kPrimaryColor : Colors.white70,
-
-              )),
+            "assets/images/friends.svg",
+            color: index == 1 ? Constance.kPrimaryColor : Colors.white70,
+          )),
           PersistentBottomNavBarItem(
               activeColorPrimary: Constance.kPrimaryColor,
               iconSize: 120,
@@ -56,23 +56,21 @@ class _ProfileViewState extends State<CustomBottomNav> {
                   ),
                   SvgPicture.asset(
                     "assets/images/add.svg",
-                    color: index == 2? Constance.kPrimaryColor : Colors.white70,
-
+                    color:
+                        index == 2 ? Constance.kPrimaryColor : Colors.white70,
                   ),
-
                 ],
               )),
           PersistentBottomNavBarItem(
               icon: SvgPicture.asset(
-                "assets/images/chat.svg",
-                color: index == 3? Constance.kPrimaryColor : Colors.white70,
-
-              )),
+            "assets/images/chat.svg",
+            color: index == 3 ? Constance.kPrimaryColor : Colors.white70,
+          )),
           PersistentBottomNavBarItem(
               icon: SvgPicture.asset(
-                "assets/images/profile.svg",
-                color: index == 4? Constance.kPrimaryColor : Colors.white70,
-              )),
+            "assets/images/profile.svg",
+            color: index == 4 ? Constance.kPrimaryColor : Colors.white70,
+          )),
         ],
         onItemSelected: (cindex) {
           setState(() {
@@ -101,7 +99,7 @@ class _ProfileViewState extends State<CustomBottomNav> {
           duration: Duration(milliseconds: 200),
         ),
         navBarStyle:
-        NavBarStyle.style15, // Choose the nav bar style with this property.
+            NavBarStyle.style15, // Choose the nav bar style with this property.
       ),
     );
   }

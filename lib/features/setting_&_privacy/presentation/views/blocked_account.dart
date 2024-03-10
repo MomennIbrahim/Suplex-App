@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
 
-class BlockedAccountScreen extends StatelessWidget {
-  const BlockedAccountScreen({super.key});
+class BlockedAccountView extends StatelessWidget {
+  const BlockedAccountView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class BlockedAccountScreen extends StatelessWidget {
                 SvgPicture.asset("assets/images/arrow-back.svg"),
                 Expanded(
                   child: Text(
-                    "Edit Profile",
+                    "Blocked Account",
                     style: Styles.style19,
                     textAlign: TextAlign.center,
                   ),

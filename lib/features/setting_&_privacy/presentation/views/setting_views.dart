@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
 import 'package:suplex/core/widgets/back_icon.dart';
-import 'package:suplex/features/setting_&_privacy/presentation/views/account_screen.dart';
+import 'package:suplex/features/setting_&_privacy/presentation/views/account_view.dart';
 import 'package:suplex/features/setting_&_privacy/presentation/views/privacy_security.dart';
 import 'package:suplex/features/setting_&_privacy/presentation/views/share_profile_view.dart';
 
@@ -64,10 +62,10 @@ class SettingViews extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                  spreadRadius: 2,
-                  offset: const Offset(0, 2),
+                  spreadRadius: 3,
+                  offset: const Offset(0, 3),
                   blurRadius: 7,
-                  color: Colors.grey[400]!),
+                  color: Colors.grey[200]!),
             ]),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

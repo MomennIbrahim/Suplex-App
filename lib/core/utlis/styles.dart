@@ -8,6 +8,13 @@ abstract class Styles {
       fontFamily: "ZillaSlab",
       color: Colors.white);
 
+  static TextStyle style11 = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: "ZillaSlab",
+    color: Colors.grey,
+  );
+
   static TextStyle style12 = TextStyle(
       fontSize: 12.sp,
       fontWeight: FontWeight.w500,
@@ -23,7 +30,20 @@ abstract class Styles {
   static TextStyle style15 = TextStyle(
     fontSize: 15.sp,
     fontWeight: FontWeight.w400,
-    color: Colors.white
+    color: Colors.white,
+  );
+
+  static TextStyle styleGrey15 = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w400,
+    color: Colors.grey,
+    fontFamily: "ZillaSlab",
+  );
+
+  static TextStyle styleBlack15 = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w400,
+    color: Colors.black,
   );
 
   static TextStyle styleZilla17 = TextStyle(
@@ -38,13 +58,11 @@ abstract class Styles {
     fontFamily: "ZillaSlab",
   );
 
-
   static TextStyle styleWhite17 = TextStyle(
-    fontSize: 17.sp,
-    fontWeight: FontWeight.w500,
-    fontFamily: "ZillaSlab",
-    color: Colors.white
-  );
+      fontSize: 17.sp,
+      fontWeight: FontWeight.w500,
+      fontFamily: "ZillaSlab",
+      color: Colors.white);
 
   static TextStyle style16 = TextStyle(
     fontSize: 16.sp,
@@ -71,10 +89,18 @@ abstract class Styles {
   );
 
   static TextStyle style19 = TextStyle(
-      fontSize: 19.sp,
-      fontWeight: FontWeight.w700,
-      fontFamily: "ZillaSlab",
-      color: Colors.black);
+    fontSize: 19.sp,
+    fontWeight: FontWeight.w700,
+    fontFamily: "ZillaSlab",
+    color: Colors.black,
+  );
+
+  static TextStyle style19W400 = TextStyle(
+    fontSize: 19.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: "ZillaSlab",
+    color: Colors.black,
+  );
 
   static TextStyle styleWhite19 = TextStyle(
       fontSize: 19.sp,
@@ -95,11 +121,10 @@ abstract class Styles {
       color: Colors.black);
 
   static TextStyle style34 = TextStyle(
-    fontSize: 34.sp,
-    fontWeight: FontWeight.w400,
-    fontFamily: "ZillaSlab",
-    color: Colors.white
-  );
+      fontSize: 34.sp,
+      fontWeight: FontWeight.w400,
+      fontFamily: "ZillaSlab",
+      color: Colors.white);
 
   static TextStyle style35 = TextStyle(
     fontSize: 35.sp,

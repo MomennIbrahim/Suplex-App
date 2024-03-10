@@ -7,7 +7,7 @@ import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
 import 'package:suplex/features/home/presentation/views/celebrity_view.dart';
-
+import 'package:suplex/features/profile/presentation/views/switch_account_view.dart';
 import '../../../../core/constance.dart';
 
 class HomeView extends StatelessWidget {
@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
             gapH(MediaQuery.sizeOf(context).height * .075),
             GestureDetector(
               onTap: () {
-                // push(context: context, widget: const SettingView());
+                push(context: context, widget: const SwitchAccountView());
               },
               child: Align(
                 alignment: Alignment.centerRight,

@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
+import 'package:suplex/core/widgets/back_icon.dart';
 import 'package:suplex/core/widgets/custom_button.dart';
 import 'package:suplex/core/widgets/custom_text_form_field.dart';
 
@@ -19,7 +20,7 @@ class AccountView extends StatelessWidget {
             gapH(MediaQuery.sizeOf(context).height * 0.075),
             Row(
               children: [
-                SvgPicture.asset("assets/images/arrow-back.svg"),
+                const BackIcon(),
                 Expanded(
                   child: Text(
                     "Account ",

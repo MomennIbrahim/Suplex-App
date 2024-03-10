@@ -7,6 +7,7 @@ import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
 import 'package:suplex/features/profile/presentation/views/switch_account_view.dart';
+import 'package:suplex/features/setting_&_privacy/presentation/views/setting_views.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -36,7 +37,7 @@ class ProfileView extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap:(){
-                          push(context: context, widget: const SwitchAccountView());
+                          push(context: context, widget: const SettingViews());
                         },
                         child: Container(
                           width: 70.w,

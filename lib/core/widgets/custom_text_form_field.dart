@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suplex/core/utlis/styles.dart';
 
 import 'out_line_input_border.dart';
 
@@ -9,7 +10,7 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText,
     required this.keyBoardType,
     this.suffix,
-     this.labelText,
+    this.labelText,
     required this.validatorText,
     this.onFieldSubmitted,
     this.hasOnSubmitted = false,
@@ -17,6 +18,7 @@ class CustomTextFormField extends StatelessWidget {
     this.labelColor = Colors.grey,
     this.style,
     this.hintText,
+    this.radius,
   });
 
   final TextEditingController controller;
@@ -31,13 +33,14 @@ class CustomTextFormField extends StatelessWidget {
   final Color labelColor;
   final TextStyle? style;
   final String? hintText;
+  final double? radius;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
         obscureText: obscureText ?? false,
         controller: controller,
-        style: const TextStyle(fontSize: 14, color: Colors.black26),
+        style: style ?? Styles.styleBlack15,
         keyboardType: keyBoardType,
         onFieldSubmitted: hasOnSubmitted
             ? (value) {
@@ -53,12 +56,12 @@ class CustomTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           labelText: labelText,
           suffixIcon: suffix,
-          focusedBorder: outLineInputBorder(),
+          focusedBorder: outLineInputBorder(radius ?? 6.0),
           hintText: hintText,
           labelStyle: TextStyle(color: labelColor),
           fillColor: fillColor,
           filled: true,
-          enabledBorder: outLineInputBorder(),
+          enabledBorder: outLineInputBorder(radius ?? 6.0),
         ));
   }
 }

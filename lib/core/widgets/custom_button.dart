@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
     this.radius,
     this.width,
     this.height,
-    this.paddingHorizontal = 16.0,
+    this.paddingHorizontal = 16.0, this.style,
   });
 
   final String text;
@@ -21,6 +21,7 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final double paddingHorizontal;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +37,16 @@ class CustomButton extends StatelessWidget {
             onPressed();
           },
           color: buttonColor?? Constance.kPrimaryColor,
-          child: Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16.sp,
-              fontFamily: "Syne",
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: style?? TextStyle(
+                color: Colors.white,
+                fontSize: 16.sp,
+                fontFamily: "Syne",
+              ),
             ),
           ),
         ),
