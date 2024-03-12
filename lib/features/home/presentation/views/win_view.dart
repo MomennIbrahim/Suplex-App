@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
@@ -92,14 +90,14 @@ class WinView extends StatelessWidget {
                           image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80")),
+                                  "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: CircleAvatar(
                             radius: 20.r,
-                            backgroundColor: Colors.red,
-                            child: Text("1",style: Styles.styleWhite17,),
+                            backgroundColor: Colors.red.withOpacity(0.25),
+                            child: Text("1",style: Styles.styleWhite17.copyWith(fontWeight: FontWeight.w800),),
                           ),
                         ),
                       ),),
@@ -112,7 +110,7 @@ class WinView extends StatelessWidget {
                   image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80"))),
+                          "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 14.0.w),
                 child: SvgPicture.asset(
@@ -140,13 +138,13 @@ class WinView extends StatelessWidget {
                         image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80")),
+                                "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: CircleAvatar(
                           radius: 20.r,
-                          backgroundColor: Colors.red,
+                          backgroundColor: Colors.white.withOpacity(0.3),
                           child: Text("1",style: Styles.styleWhite17,),
                         ),
                       ),
@@ -161,7 +159,7 @@ class WinView extends StatelessWidget {
                   image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80"))),
+                          "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 14.0.w),
                 child: SvgPicture.asset(
@@ -189,13 +187,13 @@ class WinView extends StatelessWidget {
                         image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80")),
+                                "https://images.pexels.com/photos/1499327/pexels-photo-1499327.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: CircleAvatar(
                           radius: 20.r,
-                          backgroundColor: Colors.red,
+                          backgroundColor: Colors.black.withOpacity(0.3),
                           child: Text("1",style: Styles.styleWhite17,),
                         ),
                       ),
@@ -210,7 +208,56 @@ class WinView extends StatelessWidget {
                   image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80"))),
+                          "https://images.pexels.com/photos/1499327/pexels-photo-1499327.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 14.0.w),
+                child: SvgPicture.asset(
+                  "assets/images/Win.svg",
+                ),
+              ),
+            ),
+            gapH(15.h),
+            AspectRatio(
+              aspectRatio: 16 / 8,
+              child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 8,
+                shrinkWrap: true,
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                ),
+                itemBuilder: (context, index) =>
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12.r),
+                        image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                                "https://www.retratosbarcelona.com/wp-content/uploads/2022/09/Retratos-Barcelona-Linkedin-Photo-Sydney.jpg")),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: CircleAvatar(
+                          radius: 20.r,
+                          backgroundColor: Colors.white.withOpacity(0.2),
+                          child: Text("1",style: Styles.styleWhite17,),
+                        ),
+                      ),
+                    ),
+              ),
+            ),
+            Container(
+              width: 90.w,
+              height: 80.h,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12.r),
+                  image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                          "https://www.retratosbarcelona.com/wp-content/uploads/2022/09/Retratos-Barcelona-Linkedin-Photo-Sydney.jpg"))),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 14.0.w),
                 child: SvgPicture.asset(

@@ -18,9 +18,7 @@ class ThirdWinView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            gapH(MediaQuery
-                .sizeOf(context)
-                .height * .075),
+            gapH(MediaQuery.sizeOf(context).height * .075),
             GestureDetector(
               onTap: () {
                 Navigator.pop(context);
@@ -45,7 +43,7 @@ class ThirdWinView extends StatelessWidget {
                       image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                              "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80"))),
+                              "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))),
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 100.0.w),
                     child: SvgPicture.asset(
@@ -67,7 +65,7 @@ class ThirdWinView extends StatelessWidget {
                       image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                              "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80"))),
+                              "https://images.pexels.com/photos/1499327/pexels-photo-1499327.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))),
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 100.0.w),
                     child: SvgPicture.asset(
@@ -76,7 +74,30 @@ class ThirdWinView extends StatelessWidget {
                   ),
                 ),
               ),
-            ),          ],
+            ),
+            gapH(15.h),
+            AspectRatio(
+              aspectRatio: 2,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 65.0.w),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.r),
+                      image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(
+                              "https://www.retratosbarcelona.com/wp-content/uploads/2022/09/Retratos-Barcelona-Linkedin-Photo-Sydney.jpg"))),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 85.0.w),
+                    child: SvgPicture.asset(
+                      "assets/images/sec.svg",
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

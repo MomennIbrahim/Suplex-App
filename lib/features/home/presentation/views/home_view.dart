@@ -17,7 +17,6 @@ class HomeView extends StatelessWidget {
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3WEmfJCME77ZGymWrlJkXRv5bWg9QQmQEzw&usqp=CAU",
       "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg",
       "https://sb.kaleidousercontent.com/67418/1920x1282/7978bca0ba/christina-wocintechchat-com-50tkcap8m3a-unsplash.jpg",
-      "https://sb.kaleidousercontent.com/67418/1672x1018/6463a5af0d/screenshot-2022-05-24-at-15-22-28.png",
     ];
     return Scaffold(
       body: SingleChildScrollView(
@@ -65,37 +64,36 @@ class HomeView extends StatelessWidget {
                 style: Styles.style16W600,
               ),
             ),
-            AspectRatio(
-              aspectRatio: 16 / 5,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                itemBuilder: (context, index) => Stack(
+            gapH(15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: images.map((e) => Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.0.w),
+                child: Stack(
                   alignment: Alignment.center,
                   children: [
                     CircleAvatar(
-                      radius: 38.5.r,
+                      radius: 46.5.r,
                       backgroundColor: Colors.black,
                     ),
                     CircleAvatar(
-                      radius: 38.r,
+                      radius: 46.r,
                       backgroundColor: Colors.red,
                     ),
                     CircleAvatar(
-                      radius: 37.r,
+                      radius: 45.r,
                       backgroundColor: Colors.white,
                     ),
                     CircleAvatar(
-                      radius: 35.r,
+                      radius: 43.r,
                       backgroundColor: Colors.black,
-                      backgroundImage: NetworkImage(images[index]),
+                      backgroundImage: NetworkImage(e),
                     ),
                   ],
                 ),
-                separatorBuilder: (context, index) => gapW(10.w),
-                itemCount: images.length,
-              ),
+              )).toList(),
             ),
+            gapH(15),
             GestureDetector(
               onTap: () {
                 push(context: context, widget: const CelebrityView());

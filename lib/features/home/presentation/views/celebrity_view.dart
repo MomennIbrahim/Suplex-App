@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
@@ -40,7 +38,7 @@ class CelebrityView extends StatelessWidget {
                     image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
-                            "https://images.unsplash.com/photo-1501183007986-d0d080b147f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlZXxlbnwwfHwwfHx8MA%3D%3D"))),
+                            "https://khamsat.hsoubcdn.com/images/services/694800/f2b362b794037dcdd4b922ee389352b5.jpg"))),
                 child: Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 22.h),

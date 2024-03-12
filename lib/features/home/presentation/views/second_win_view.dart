@@ -92,14 +92,14 @@ class SecondWinView extends StatelessWidget {
                           image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
-                                  "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80")),
+                                  "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(50.0),
+                          padding: const EdgeInsets.all(60.0),
                           child: CircleAvatar(
                             radius: 20.r,
-                            backgroundColor: Colors.red,
-                            child: Text("1",style: Styles.styleWhite17,),
+                            backgroundColor: Colors.white.withOpacity(0.3),
+                            child: Text("1",style: Styles.style17W600,),
                           ),
                         ),
                       ),),
@@ -112,7 +112,7 @@ class SecondWinView extends StatelessWidget {
                   image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80"))),
+                          "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 14.0.w),
                 child: SvgPicture.asset(
@@ -140,14 +140,14 @@ class SecondWinView extends StatelessWidget {
                         image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80")),
+                                "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(50.0),
+                        padding: const EdgeInsets.all(60.0),
                         child: CircleAvatar(
                           radius: 20.r,
-                          backgroundColor: Colors.red,
-                          child: Text("1",style: Styles.styleWhite17,),
+                          backgroundColor: Colors.white.withOpacity(0.4),
+                          child: Text("2",style: Styles.style17W600,),
                         ),
                       ),
                     ),),
@@ -160,7 +160,7 @@ class SecondWinView extends StatelessWidget {
                   image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://i0.wp.com/picjumbo.com/wp-content/uploads/solitary-tree-against-setting-sun-free-photo.jpg?w=600&quality=80"))),
+                          "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 14.0.w),
                 child: SvgPicture.asset(
