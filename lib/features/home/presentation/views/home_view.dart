@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
@@ -15,6 +13,12 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> images = [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3WEmfJCME77ZGymWrlJkXRv5bWg9QQmQEzw&usqp=CAU",
+      "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg",
+      "https://sb.kaleidousercontent.com/67418/1920x1282/7978bca0ba/christina-wocintechchat-com-50tkcap8m3a-unsplash.jpg",
+      "https://sb.kaleidousercontent.com/67418/1672x1018/6463a5af0d/screenshot-2022-05-24-at-15-22-28.png",
+    ];
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -62,7 +66,7 @@ class HomeView extends StatelessWidget {
               ),
             ),
             AspectRatio(
-              aspectRatio: 16/5,
+              aspectRatio: 16 / 5,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -70,23 +74,30 @@ class HomeView extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     CircleAvatar(
-                      radius: 40.r,
+                      radius: 38.5.r,
+                      backgroundColor: Colors.black,
+                    ),
+                    CircleAvatar(
+                      radius: 38.r,
                       backgroundColor: Colors.red,
                     ),
                     CircleAvatar(
                       radius: 37.r,
+                      backgroundColor: Colors.white,
+                    ),
+                    CircleAvatar(
+                      radius: 35.r,
                       backgroundColor: Colors.black,
-                      backgroundImage: const NetworkImage(
-                          "https://images.unsplash.com/photo-1538991383142-36c4edeaffde?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                      backgroundImage: NetworkImage(images[index]),
                     ),
                   ],
                 ),
                 separatorBuilder: (context, index) => gapW(10.w),
-                itemCount: 5,
+                itemCount: images.length,
               ),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 push(context: context, widget: const CelebrityView());
               },
               child: Padding(
@@ -101,14 +112,14 @@ class HomeView extends StatelessWidget {
                             color: Colors.red,
                             image: const DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage(""
-                                    "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"))),
+                                image: NetworkImage(
+                                    "https://khamsat.hsoubcdn.com/images/services/694800/f2b362b794037dcdd4b922ee389352b5.jpg"))),
                         width: double.maxFinite,
                       ),
                       Center(
                         child: Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16.w, vertical: 8.h),
                           child: Container(
                             padding: const EdgeInsets.all(8),
                             width: double.maxFinite,
@@ -143,11 +154,11 @@ class HomeView extends StatelessWidget {
                       image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                              "https://techcrunch.com/wp-content/uploads/2022/06/reels-templates.png"))),
+                              "https://observer.com/wp-content/uploads/sites/2/2022/10/Sara-Echeagaray-Photo-by-Krissy-Saleh-1.jpg?quality=80&w=635&h=518"))),
                 ),
               ),
               separatorBuilder: (context, index) => gapH(10.h),
-              itemCount: 5,
+              itemCount: 3,
             ),
           ],
         ),

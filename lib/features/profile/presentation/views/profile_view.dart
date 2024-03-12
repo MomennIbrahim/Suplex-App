@@ -6,7 +6,6 @@ import 'package:suplex/core/constance.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
-import 'package:suplex/features/profile/presentation/views/switch_account_view.dart';
 import 'package:suplex/features/setting_&_privacy/presentation/views/setting_views.dart';
 
 class ProfileView extends StatelessWidget {
@@ -14,6 +13,17 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> images = [
+      "https://lionsgate.brightspotcdn.com/1d/90/8fc75de5411e985f3a2def98358d/johnwick4-section-promo-double-home-03.jpg",
+      "https://www.theessential.agency/hubfs/6%20reasons%20why%20Google%20loves%20bloggers-1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dwayne_Johnson_2014_%28cropped%29.jpg/800px-Dwayne_Johnson_2014_%28cropped%29.jpg",
+      "https://hips.hearstapps.com/hmg-prod/images/tom-cruise-vanessa-kirby-mission-impossible-dead-reckoning-64a6add681cef.jpeg?crop=1xw:0.8441807044410413xh;center,top",
+      "https://buildawellnessblog.com/wp-content/uploads/2020/07/Pros-and-Cons-of-TikTok-Pin.png",
+      "https://www.theessential.agency/hubfs/6%20reasons%20why%20Google%20loves%20bloggers-1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Dwayne_Johnson_2014_%28cropped%29.jpg/800px-Dwayne_Johnson_2014_%28cropped%29.jpg",
+      "https://hips.hearstapps.com/hmg-prod/images/tom-cruise-vanessa-kirby-mission-impossible-dead-reckoning-64a6add681cef.jpeg?crop=1xw:0.8441807044410413xh;center,top",
+      "https://lionsgate.brightspotcdn.com/1d/90/8fc75de5411e985f3a2def98358d/johnwick4-section-promo-double-home-03.jpg",
+    ];
     return DefaultTabController(
       length: 5,
       child: Scaffold(
@@ -155,16 +165,29 @@ class ProfileView extends StatelessWidget {
                               crossAxisCount: 3,
                               crossAxisSpacing: 4,
                               mainAxisSpacing: 5),
-                      itemCount: 9,
-                      itemBuilder: (context, index) => const Image(
-                        fit: BoxFit.cover,
-                            image: NetworkImage(
-                                "https://images.unsplash.com/photo-1501183007986-d0d080b147f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlZXxlbnwwfHwwfHx8MA%3D%3D"),
-                          )),
-                  Center(child: Text('Tab 2 Content')),
-                  Center(child: Text('Tab 3 Content')),
-                  Center(child: Text('Tab 4 Content')),
-                  Center(child: Text('Tab 5 Content')),
+                      itemCount: images.length,
+                      itemBuilder: (context, index) => Stack(
+                        alignment: Alignment.bottomLeft,
+                        children: [
+                           Image(
+                            fit: BoxFit.cover,
+                                width: double.maxFinite,
+                                height: double.infinity,
+                                image: NetworkImage(
+                                    images[index]),
+                              ),
+                          Row(
+                            children: [
+                              const Icon(Icons.play_arrow_outlined,color: Colors.white,),
+                              Text("12K",style: Styles.styleWhite17,)
+                            ],
+                          )
+                        ],
+                      )),
+                  const Center(child: Text('Tab 2 Content')),
+                  const Center(child: Text('Tab 3 Content')),
+                  const Center(child: Text('Tab 4 Content')),
+                  const Center(child: Text('Tab 5 Content')),
                 ],
               ),
             ),

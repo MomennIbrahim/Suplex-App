@@ -18,7 +18,7 @@ class ReelsView extends StatefulWidget {
 
 class _ReelsViewState extends State<ReelsView> {
   List<String> reels = [
-    "https://static.videezy.com/system/resources/previews/000/044/479/original/banana.mp4",
+    "https://images.pexels.com/photos/19567574/pexels-photo-19567574/free-photo-of-man-and-woman-near-pond-together.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
     "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
     "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
@@ -26,12 +26,8 @@ class _ReelsViewState extends State<ReelsView> {
   ];
 
   List<String> images = [
-    "https://m.media-amazon.com/images/I/71J2WJRxyaL._AC_SL1500_.jpg",
-    "https://m.media-amazon.com/images/I/61awot7RRiL._AC_SL1225_.jpg",
-    "https://m.media-amazon.com/images/I/51G4FYIMVlL._AC_SL1000_.jpg",
-    "https://m.media-amazon.com/images/I/71J2WJRxyaL._AC_SL1500_.jpg",
-    "https://m.media-amazon.com/images/I/61awot7RRiL._AC_SL1225_.jpg",
-    "https://m.media-amazon.com/images/I/51G4FYIMVlL._AC_SL1000_.jpg",
+    "https://images.pexels.com/photos/19567574/pexels-photo-19567574/free-photo-of-man-and-woman-near-pond-together.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/18042975/pexels-photo-18042975/free-photo-of-bride-and-groom-standing-close-to-each-other.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   ];
 
   bool isFollowing = true;

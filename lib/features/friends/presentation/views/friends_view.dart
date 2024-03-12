@@ -140,7 +140,7 @@ class FriendsView extends StatelessWidget {
                               radius: 37.r,
                               backgroundColor: Colors.black,
                               backgroundImage: const NetworkImage(
-                                  "https://images.unsplash.com/photo-1538991383142-36c4edeaffde?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                                  "https://lh3.googleusercontent.com/proxy/XUfoY1k3EtrDf8sFwtfVBY3KnC7uVGCPTparHmgF-tJyi3TpQcmiv3P-9cCcV8A4AzzFRYjqaOsKIbUbXiGDOF7P5bs9OkgMnKPYx71o34ZGtHbEf5eYgOFEdK74Ts_f5_jfWL7dIDEG2sfCZ0tZE_3nxTEOkw"),
                             ),
                           ],
                         ),
@@ -195,12 +195,12 @@ class FriendsView extends StatelessWidget {
                         image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                "https://techcrunch.com/wp-content/uploads/2022/06/reels-templates.png"))),
+                                "https://s3-eu-west-1.amazonaws.com/plinth.uk.com/images/files/000/003/255/1024x1024/16.jpg?1653064964"))),
                   ),
                 ),
               ),
               separatorBuilder: (context, index) => gapH(10.h),
-              itemCount: 5,
+              itemCount: 2,
             ),
 
           ],
