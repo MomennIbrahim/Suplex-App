@@ -1,10 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:video_player/video_player.dart';
-
 import '../../../../core/constance.dart';
 import '../../../../core/utlis/custom_size.dart';
 import '../../../../core/utlis/styles.dart';
@@ -146,7 +142,11 @@ class _ReelsViewState extends State<ReelsView> {
                               child: CircleAvatar(
                                 radius: 5.r,
                                 backgroundColor: Constance.kPrimaryColor,
-                                child: Icon(Icons.add,size: 10.r,color: Colors.white,),
+                                child: Icon(
+                                  Icons.add,
+                                  size: 10.r,
+                                  color: Colors.white,
+                                ),
                               ),
                             )
                           ],
@@ -154,27 +154,34 @@ class _ReelsViewState extends State<ReelsView> {
                       ),
                     ),
                     gapH(7.h),
-                     Align(
+                    Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
-                        padding:  const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Icon(Icons.favorite,color: Colors.white,size: 37.r,),
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Colors.white,
+                          size: 37.r,
+                        ),
                       ),
                     ),
                     gapH(7.h),
-                     Align(
+                    Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
-                        padding:  const EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: SvgPicture.asset("assets/images/send.svg"),
                       ),
                     ),
                     gapH(7.h),
-                     Align(
+                    Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
-                        padding:  const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: SvgPicture.asset("assets/images/comment.svg",height: 30.h,),
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: SvgPicture.asset(
+                          "assets/images/comment.svg",
+                          height: 30.h,
+                        ),
                       ),
                     ),
                     gapH(MediaQuery.sizeOf(context).height * 0.05),
@@ -201,13 +208,12 @@ class _ReelsViewState extends State<ReelsView> {
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-                          child: Expanded(
-                              child: Text(
+                          child: Text(
                             "adsas dksajd kasjd as dasdkl jasd aklsjd aklsjd dasdjasjdjsahdjashdjashdjahsdj asdas asdas",
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: Styles.style10,
-                          )),
+                          ),
                         )),
                     gapH(MediaQuery.sizeOf(context).height * .075)
                   ],
