@@ -21,6 +21,12 @@ abstract class Styles {
       fontFamily: "ZillaSlab",
       color: Colors.black);
 
+  static TextStyle styleWhite12 = TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w500,
+      fontFamily: "ZillaSlab",
+      color: Colors.white);
+
   static TextStyle style12W600 = TextStyle(
       fontSize: 12.sp,
       fontWeight: FontWeight.w600,
