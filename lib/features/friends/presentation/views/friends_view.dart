@@ -185,7 +185,7 @@ class FriendsView extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => GestureDetector(
                 onTap: (){
-                  push(context: context, widget: const ReelsView());
+                  push(context: context, widget: const ReelsView(),withNav: false);
                 },
                 child: AspectRatio(
                   aspectRatio: 16 / 20,

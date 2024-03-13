@@ -4,9 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
+import 'package:suplex/features/friends/presentation/views/reels_view.dart';
 import 'package:suplex/features/home/presentation/views/celebrity_view.dart';
+import 'package:suplex/features/home/presentation/views/live_view.dart';
 import 'package:suplex/features/profile/presentation/views/switch_account_view.dart';
 import '../../../../core/constance.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -144,15 +147,55 @@ class HomeView extends StatelessWidget {
             ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => AspectRatio(
-                aspectRatio: 16 / 17,
-                child: Container(
-                  width: double.maxFinite,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                              "https://observer.com/wp-content/uploads/sites/2/2022/10/Sara-Echeagaray-Photo-by-Krissy-Saleh-1.jpg?quality=80&w=635&h=518"))),
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: (){
+                  push(context: context, widget: const LiveView(),withNav: false);
+                },
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    AspectRatio(
+                      aspectRatio: 16 / 17,
+                      child: Container(
+                        width: double.maxFinite,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                    "https://observer.com/wp-content/uploads/sites/2/2022/10/Sara-Echeagaray-Photo-by-Krissy-Saleh-1.jpg?quality=80&w=635&h=518"))),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 12.0.w,vertical: 8.h),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius:
+                              BorderRadius.circular(30.r),
+                              child: SizedBox(
+                                height: 45.h,
+                                child: CustomTextFormField(
+                                  controller:
+                                  TextEditingController(),
+                                  keyBoardType:
+                                  TextInputType.text,
+                                  hintText: "Add Comment",
+                                  validatorText: "",
+                                  fillColor: Colors.black12,
+                                ),
+                              ),
+                            ),
+                          ),
+                          gapW(10),
+                          Image.asset("assets/images/gift.png",height: 25.h,),
+                          gapW(5),
+                          const Icon(Icons.favorite,color: Colors.red,),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
               separatorBuilder: (context, index) => gapH(10.h),

@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:suplex/core/widgets/custom_text_form_field.dart';
 import '../../../../core/constance.dart';
 import '../../../../core/utlis/custom_size.dart';
 import '../../../../core/utlis/styles.dart';
@@ -33,82 +33,127 @@ class _ReelsViewState extends State<ReelsView> {
 
   @override
   Widget build(BuildContext context) {
-
-
     List<Widget> comments = [
       ListTile(
-        title: Text('amazing! sa saj kasj dkjsakd jskaj kasjd kjsdk jsadkj kasjdkj sakdj iwjd snmckjsadc asi',style: Styles.styleWhite12,),
+        title: Text(
+          'amazing! sa saj kasj dkjsakd jskaj kasjd kjsdk jsadkj kasjdkj sakdj iwjd snmckjsadc asi',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Nice Video',style: Styles.styleWhite12,),
+        title: Text(
+          'Nice Video',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('Wow! What is the name of this song?',style: Styles.styleWhite12,),
+        title: Text(
+          'Wow! What is the name of this song?',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
       ListTile(
-        title: Text('amazing! sa saj kasj dkjsakd jskaj kasjd kjsdk jsadkj kasjdkj sakdj iwjd snmckjsadc asi',style: Styles.styleWhite12,),
+        title: Text(
+          'amazing! sa saj kasj dkjsakd jskaj kasjd kjsdk jsadkj kasjdkj sakdj iwjd snmckjsadc asi',
+          style: Styles.styleWhite12,
+        ),
         leading: const CircleAvatar(
-          backgroundImage: NetworkImage("https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
+          backgroundImage: NetworkImage(
+              "https://sb.kaleidousercontent.com/67418/1920x1281/0e9f02a048/christian-buehner-ditylc26zvi-unsplash.jpg"),
         ),
       ),
-
     ];
 
     return Scaffold(
@@ -260,9 +305,52 @@ class _ReelsViewState extends State<ReelsView> {
                             backgroundColor: Colors.black87,
                             builder: (BuildContext builderContext) {
                               return Padding(
-                                padding: EdgeInsets.only(bottom: 30.0.h,top: 10.h),
-                                child: ListView(
-                                  children: comments.map((e) => e).toList(),
+                                padding:
+                                    EdgeInsets.only(bottom: 30.0.h, top: 10.h),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: ListView(
+                                        children:
+                                            comments.map((e) => e).toList(),
+                                      ),
+                                    ),
+                                    gapH(20),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 12.0.w),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(30.r),
+                                              child: SizedBox(
+                                                height: 45.h,
+                                                child: CustomTextFormField(
+                                                  controller:
+                                                      TextEditingController(),
+                                                  keyBoardType:
+                                                      TextInputType.text,
+                                                  hintText: "Add Comment",
+                                                  validatorText: "",
+                                                  fillColor: Colors.white12,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          gapW(10),
+                                          Icon(
+                                            Icons.favorite,
+                                            color: Colors.red,
+                                            size: 30.r,
+                                          ),
+                                          gapW(5),
+                                          SvgPicture.asset("assets/images/forword.svg",height: 25.h,)
+                                        ],
+                                      ),
+                                    )
+                                  ],
                                 ),
                               );
                             });
