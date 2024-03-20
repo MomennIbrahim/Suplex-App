@@ -4,10 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
-import 'package:suplex/features/friends/presentation/views/reels_view.dart';
 import 'package:suplex/features/home/presentation/views/celebrity_view.dart';
 import 'package:suplex/features/home/presentation/views/live_view.dart';
 import 'package:suplex/features/profile/presentation/views/switch_account_view.dart';
+
 import '../../../../core/constance.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 
@@ -70,31 +70,33 @@ class HomeView extends StatelessWidget {
             gapH(15),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: images.map((e) => Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.0.w),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircleAvatar(
-                      radius: 46.5.r,
-                      backgroundColor: Colors.black,
-                    ),
-                    CircleAvatar(
-                      radius: 46.r,
-                      backgroundColor: Colors.red,
-                    ),
-                    CircleAvatar(
-                      radius: 45.r,
-                      backgroundColor: Colors.white,
-                    ),
-                    CircleAvatar(
-                      radius: 43.r,
-                      backgroundColor: Colors.black,
-                      backgroundImage: NetworkImage(e),
-                    ),
-                  ],
-                ),
-              )).toList(),
+              children: images
+                  .map((e) => Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 4.0.w),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: 46.5.r,
+                              backgroundColor: Colors.black,
+                            ),
+                            CircleAvatar(
+                              radius: 46.r,
+                              backgroundColor: Colors.red,
+                            ),
+                            CircleAvatar(
+                              radius: 45.r,
+                              backgroundColor: Colors.white,
+                            ),
+                            CircleAvatar(
+                              radius: 43.r,
+                              backgroundColor: Colors.black,
+                              backgroundImage: NetworkImage(e),
+                            ),
+                          ],
+                        ),
+                      ))
+                  .toList(),
             ),
             gapH(15),
             GestureDetector(
@@ -148,8 +150,11 @@ class HomeView extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => GestureDetector(
-                onTap: (){
-                  push(context: context, widget: const LiveView(),withNav: false);
+                onTap: () {
+                  push(
+                      context: context,
+                      widget: const LiveView(),
+                      withNav: false);
                 },
                 child: Stack(
                   alignment: Alignment.bottomCenter,
@@ -167,20 +172,17 @@ class HomeView extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 12.0.w,vertical: 8.h),
+                          horizontal: 12.0.w, vertical: 8.h),
                       child: Row(
                         children: [
                           Expanded(
                             child: ClipRRect(
-                              borderRadius:
-                              BorderRadius.circular(30.r),
+                              borderRadius: BorderRadius.circular(30.r),
                               child: SizedBox(
                                 height: 45.h,
                                 child: CustomTextFormField(
-                                  controller:
-                                  TextEditingController(),
-                                  keyBoardType:
-                                  TextInputType.text,
+                                  controller: TextEditingController(),
+                                  keyBoardType: TextInputType.text,
                                   hintText: "Add Comment",
                                   validatorText: "",
                                   fillColor: Colors.black12,
@@ -189,9 +191,15 @@ class HomeView extends StatelessWidget {
                             ),
                           ),
                           gapW(10),
-                          Image.asset("assets/images/gift.png",height: 25.h,),
+                          Image.asset(
+                            "assets/images/gift.png",
+                            height: 25.h,
+                          ),
                           gapW(5),
-                          const Icon(Icons.favorite,color: Colors.red,),
+                          const Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          ),
                         ],
                       ),
                     ),

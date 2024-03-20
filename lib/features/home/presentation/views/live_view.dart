@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -399,22 +400,18 @@ class _LiveViewState extends State<LiveView> {
                   ),
                 ),
               ),
+              isImageshown == true
+                  ? SlideInUp(
+                      animate: true,
+                      child: const Image(
+                        fit: BoxFit.fill,
+                        image: NetworkImage(
+                            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/512dfb9d-bf36-438e-9bea-2c7951ad7a51/d7dy4rd-2f99d84b-ace6-4b19-a342-33dc2e78cf47.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMmRmYjlkLWJmMzYtNDM4ZS05YmVhLTJjNzk1MWFkN2E1MVwvZDdkeTRyZC0yZjk5ZDg0Yi1hY2U2LTRiMTktYTM0Mi0zM2RjMmU3OGNmNDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kLxL6GzBuDqivtYYGJcrHJHF1rxXeLFFabampcT1yyE'),
+                      ),
+                    )
+                  : const SizedBox(),
             ],
           ),
-          isImageshown == true
-              ? const Positioned(
-                  right: 5,
-                  left: 5,
-                  bottom: 5,
-                  child: ClipRRect(
-                    child: Image(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(
-                          'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/512dfb9d-bf36-438e-9bea-2c7951ad7a51/d7dy4rd-2f99d84b-ace6-4b19-a342-33dc2e78cf47.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMmRmYjlkLWJmMzYtNDM4ZS05YmVhLTJjNzk1MWFkN2E1MVwvZDdkeTRyZC0yZjk5ZDg0Yi1hY2U2LTRiMTktYTM0Mi0zM2RjMmU3OGNmNDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kLxL6GzBuDqivtYYGJcrHJHF1rxXeLFFabampcT1yyE'),
-                    ),
-                  ),
-                )
-              : const SizedBox(),
           Expanded(
             child: ListView(
               children: comments.map((e) => e).toList(),
