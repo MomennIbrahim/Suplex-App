@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/constance.dart';
 import '../../../../core/utlis/custom_size.dart';
 import '../../../../core/utlis/styles.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
@@ -299,14 +298,16 @@ class LiveView extends StatelessWidget {
                                             mainAxisSpacing: 4,
                                             crossAxisSpacing: 4,
                                             crossAxisCount: 5),
-                                    itemBuilder: (context, index) => FittedBox(
-                                          child: Image(
-                                              width: 20.w,
-                                              height: 20.h,
-                                              fit: BoxFit.cover,
-                                              image: const AssetImage(
-                                                  "assets/images/gift.png")),
-                                        )),
+                                    itemBuilder: (context, index) => GestureDetector(
+                                      child: FittedBox(
+                                            child: Image(
+                                                width: 20.w,
+                                                height: 20.h,
+                                                fit: BoxFit.cover,
+                                                image: const AssetImage(
+                                                    "assets/images/gift.png")),
+                                          ),
+                                    )),
                               )
                             ],
                           ),
@@ -363,8 +364,14 @@ class LiveView extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.live_tv,color: Colors.white,),
-                        Text("Live",style: TextStyle(color: Colors.white),),
+                        Icon(
+                          Icons.live_tv,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          "Live",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ],
                     ),
                   ),

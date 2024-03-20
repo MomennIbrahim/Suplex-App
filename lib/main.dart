@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suplex/core/constance.dart';
-import 'package:suplex/features/auth/presentation/screens/login_view.dart';
+import 'package:suplex/features/home/presentation/test.dart';
+
+import 'features/auth/presentation/screens/login_view.dart';
 
 void main() {
   runApp(const MyApp());
