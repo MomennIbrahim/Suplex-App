@@ -1,12 +1,21 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/utlis/custom_size.dart';
 import '../../../../core/utlis/styles.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 
-class LiveView extends StatelessWidget {
+class LiveView extends StatefulWidget {
   const LiveView({super.key});
 
+  @override
+  State<LiveView> createState() => _LiveViewState();
+}
+
+class _LiveViewState extends State<LiveView> {
+  bool isImageshown = false;
   @override
   Widget build(BuildContext context) {
     List<Widget> comments = [
@@ -291,24 +300,37 @@ class LiveView extends StatelessWidget {
                               gapH(10),
                               Expanded(
                                 child: GridView.builder(
-                                    itemCount: 8,
-                                    gridDelegate:
-                                        const SliverGridDelegateWithFixedCrossAxisCount(
-                                            childAspectRatio: 1.2,
-                                            mainAxisSpacing: 4,
-                                            crossAxisSpacing: 4,
-                                            crossAxisCount: 5),
-                                    itemBuilder: (context, index) => GestureDetector(
-                                      child: FittedBox(
+                                  itemCount: 8,
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                          childAspectRatio: 1.2,
+                                          mainAxisSpacing: 4,
+                                          crossAxisSpacing: 4,
+                                          crossAxisCount: 5),
+                                  itemBuilder: (context, index) =>
+                                      GestureDetector(
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                            isImageshown = !isImageshown;
+
+                                            setState(() {});
+                                            Timer(const Duration(seconds: 2),
+                                                () {
+                                              isImageshown = !isImageshown;
+                                              setState(() {});
+                                            });
+                                          },
+                                          child: FittedBox(
                                             child: Image(
-                                                width: 20.w,
-                                                height: 20.h,
-                                                fit: BoxFit.cover,
-                                                image: const AssetImage(
-                                                    "assets/images/gift.png")),
-                                          ),
-                                    )),
-                              )
+                                              width: 20.w,
+                                              height: 20.h,
+                                              fit: BoxFit.cover,
+                                              image: const NetworkImage(
+                                                  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/512dfb9d-bf36-438e-9bea-2c7951ad7a51/d7dy4rd-2f99d84b-ace6-4b19-a342-33dc2e78cf47.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMmRmYjlkLWJmMzYtNDM4ZS05YmVhLTJjNzk1MWFkN2E1MVwvZDdkeTRyZC0yZjk5ZDg0Yi1hY2U2LTRiMTktYTM0Mi0zM2RjMmU3OGNmNDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kLxL6GzBuDqivtYYGJcrHJHF1rxXeLFFabampcT1yyE'),
+                                            ),
+                                          )),
+                                ),
+                              ),
                             ],
                           ),
                         );
@@ -379,6 +401,20 @@ class LiveView extends StatelessWidget {
               ),
             ],
           ),
+          isImageshown == true
+              ? const Positioned(
+                  right: 5,
+                  left: 5,
+                  bottom: 5,
+                  child: ClipRRect(
+                    child: Image(
+                      fit: BoxFit.fill,
+                      image: NetworkImage(
+                          'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/512dfb9d-bf36-438e-9bea-2c7951ad7a51/d7dy4rd-2f99d84b-ace6-4b19-a342-33dc2e78cf47.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMmRmYjlkLWJmMzYtNDM4ZS05YmVhLTJjNzk1MWFkN2E1MVwvZDdkeTRyZC0yZjk5ZDg0Yi1hY2U2LTRiMTktYTM0Mi0zM2RjMmU3OGNmNDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kLxL6GzBuDqivtYYGJcrHJHF1rxXeLFFabampcT1yyE'),
+                    ),
+                  ),
+                )
+              : const SizedBox(),
           Expanded(
             child: ListView(
               children: comments.map((e) => e).toList(),
