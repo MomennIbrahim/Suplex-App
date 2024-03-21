@@ -22,7 +22,7 @@ class CelebrityView extends StatelessWidget {
           children: [
             gapH(MediaQuery.sizeOf(context).height * .07),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
               child: SvgPicture.asset(
@@ -59,14 +59,21 @@ class CelebrityView extends StatelessWidget {
                                 "Celebrity",
                                 style: Styles.style34,
                               ),
-                              Text(des,style: Styles.style20,),
+                              Text(
+                                des,
+                                style: Styles.style20,
+                              ),
                             ],
                           ),
                           InkWell(
-                              onTap: (){
+                              onTap: () {
                                 push(context: context, widget: const WinView());
                               },
-                              child: SvgPicture.asset("assets/images/go.svg",width: 30.w,height: 35.h,))
+                              child: SvgPicture.asset(
+                                "assets/images/go.svg",
+                                width: 30.w,
+                                height: 35.h,
+                              ))
                         ],
                       ),
                     ),
