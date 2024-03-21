@@ -17,6 +17,7 @@ class LiveView extends StatefulWidget {
 
 class _LiveViewState extends State<LiveView> {
   bool isImageshown = false;
+  int selectImage = 0;
   @override
   Widget build(BuildContext context) {
     List<Widget> comments = [
@@ -301,7 +302,7 @@ class _LiveViewState extends State<LiveView> {
                               gapH(10),
                               Expanded(
                                 child: GridView.builder(
-                                  itemCount: 8,
+                                  itemCount: images.length,
                                   gridDelegate:
                                       const SliverGridDelegateWithFixedCrossAxisCount(
                                           childAspectRatio: 1.2,
@@ -311,6 +312,7 @@ class _LiveViewState extends State<LiveView> {
                                   itemBuilder: (context, index) =>
                                       GestureDetector(
                                           onTap: () {
+                                            selectImage = index;
                                             Navigator.pop(context);
                                             isImageshown = !isImageshown;
 
@@ -322,12 +324,18 @@ class _LiveViewState extends State<LiveView> {
                                             });
                                           },
                                           child: FittedBox(
-                                            child: Image(
-                                              width: 20.w,
-                                              height: 20.h,
-                                              fit: BoxFit.cover,
-                                              image: const NetworkImage(
-                                                  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/512dfb9d-bf36-438e-9bea-2c7951ad7a51/d7dy4rd-2f99d84b-ace6-4b19-a342-33dc2e78cf47.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMmRmYjlkLWJmMzYtNDM4ZS05YmVhLTJjNzk1MWFkN2E1MVwvZDdkeTRyZC0yZjk5ZDg0Yi1hY2U2LTRiMTktYTM0Mi0zM2RjMmU3OGNmNDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kLxL6GzBuDqivtYYGJcrHJHF1rxXeLFFabampcT1yyE'),
+                                            child: ClipRRect(
+                                              child: CircleAvatar(
+                                                backgroundColor: Colors.white,
+                                                radius: 10.r,
+                                                child: Image(
+                                                  width: 20.w,
+                                                  height: 20.h,
+                                                  fit: BoxFit.cover,
+                                                  image: NetworkImage(
+                                                      images[index]),
+                                                ),
+                                              ),
                                             ),
                                           )),
                                 ),
@@ -400,21 +408,30 @@ class _LiveViewState extends State<LiveView> {
                   ),
                 ),
               ),
-              isImageshown == true
-                  ? SlideInUp(
-                      animate: true,
-                      child: const Image(
-                        fit: BoxFit.fill,
-                        image: NetworkImage(
-                            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/512dfb9d-bf36-438e-9bea-2c7951ad7a51/d7dy4rd-2f99d84b-ace6-4b19-a342-33dc2e78cf47.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMmRmYjlkLWJmMzYtNDM4ZS05YmVhLTJjNzk1MWFkN2E1MVwvZDdkeTRyZC0yZjk5ZDg0Yi1hY2U2LTRiMTktYTM0Mi0zM2RjMmU3OGNmNDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kLxL6GzBuDqivtYYGJcrHJHF1rxXeLFFabampcT1yyE'),
-                      ),
-                    )
-                  : const SizedBox(),
             ],
           ),
           Expanded(
-            child: ListView(
-              children: comments.map((e) => e).toList(),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                ListView(
+                  children: comments.map((e) => e).toList(),
+                ),
+                isImageshown == true
+                    ? SlideInUp(
+                        animate: true,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(40.r),
+                          child: Image(
+                            fit: BoxFit.contain,
+                            image: NetworkImage(
+                              images[selectImage],
+                            ),
+                          ),
+                        ),
+                      )
+                    : const SizedBox(),
+              ],
             ),
           ),
         ],
@@ -422,3 +439,11 @@ class _LiveViewState extends State<LiveView> {
     );
   }
 }
+
+// create unit test for this widget
+// create widget test for this widget
+List<String> images = [
+  "https://i.pinimg.com/originals/4c/22/be/4c22beff80109df112e9e8012ba89487.gif",
+  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/512dfb9d-bf36-438e-9bea-2c7951ad7a51/d7dy4rd-2f99d84b-ace6-4b19-a342-33dc2e78cf47.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMmRmYjlkLWJmMzYtNDM4ZS05YmVhLTJjNzk1MWFkN2E1MVwvZDdkeTRyZC0yZjk5ZDg0Yi1hY2U2LTRiMTktYTM0Mi0zM2RjMmU3OGNmNDcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kLxL6GzBuDqivtYYGJcrHJHF1rxXeLFFabampcT1yyE",
+  "https://i.pinimg.com/originals/5d/89/58/5d89582d3c3b12aa6ba4b5767a5d0ffc.gif",
+];
