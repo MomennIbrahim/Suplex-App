@@ -1,11 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
-import 'package:suplex/core/utlis/styles.dart';
-import '../../../../core/constance.dart';
 
 class ThirdWinView extends StatelessWidget {
   const ThirdWinView({super.key});

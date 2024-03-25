@@ -107,40 +107,26 @@ class HomeView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16.0.w),
                 child: AspectRatio(
                   aspectRatio: 5 / 1.4,
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(7.r),
-                            color: Colors.red,
-                            image: const DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(
-                                    "https://khamsat.hsoubcdn.com/images/services/694800/f2b362b794037dcdd4b922ee389352b5.jpg"))),
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 16.w, vertical: 8.h),
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
                         width: double.maxFinite,
-                      ),
-                      Center(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 16.w, vertical: 8.h),
-                          child: Container(
-                            padding: const EdgeInsets.all(8),
-                            width: double.maxFinite,
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.3),
-                              borderRadius: BorderRadius.circular(20.r),
-                            ),
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Celebirty Challenge Live Stream",
-                                style: Styles.styleWhite17,
-                              ),
-                            ),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.3),
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            "Celebirty Challenge Live Stream",
+                            style: Styles.styleWhite17,
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),

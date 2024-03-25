@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
@@ -22,7 +20,10 @@ class RegisterView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               gapH(MediaQuery.sizeOf(context).height * 0.1),
-              Text("Sign up",style: Styles.style35,),
+              Text(
+                "Sign up",
+                style: Styles.style35,
+              ),
               gapH(20.h),
               Text(
                 "User Name",
@@ -39,6 +40,20 @@ class RegisterView extends StatelessWidget {
               ),
               gapH(12.h),
               Text(
+                "Phone number",
+                style: Styles.styleZilla17,
+              ),
+              gapH(12.h),
+              CustomTextFormField(
+                controller: TextEditingController(),
+                keyBoardType: TextInputType.name,
+                style: Styles.style16,
+                fillColor: Colors.black12,
+                labelText: "Enter phone number",
+                validatorText: "phone is required",
+              ),
+              gapH(12.h),
+              Text(
                 "Password",
                 style: Styles.styleZilla17,
               ),
@@ -49,7 +64,10 @@ class RegisterView extends StatelessWidget {
                 style: Styles.style16,
                 fillColor: Colors.black12,
                 labelText: "Enter Password",
-                suffix: const Icon(Icons.visibility,color: Colors.grey,),
+                suffix: const Icon(
+                  Icons.visibility,
+                  color: Colors.grey,
+                ),
                 validatorText: "Password is required",
               ),
               gapH(12.h),
@@ -64,18 +82,22 @@ class RegisterView extends StatelessWidget {
                 style: Styles.style16,
                 fillColor: Colors.black12,
                 labelText: "Enter password again",
-                suffix: const Icon(Icons.visibility,color: Colors.grey,),
+                suffix: const Icon(
+                  Icons.visibility,
+                  color: Colors.grey,
+                ),
                 validatorText: "confirm password is required",
               ),
               gapH(10.h),
               Align(
                   alignment: Alignment.centerRight,
-                  child: CustomButton(text: "Sign up", onPressed: (){})),
+                  child: CustomButton(text: "Sign up", onPressed: () {})),
               TextButton(
-                  onPressed: (){
+                  onPressed: () {
                     push(context: context, widget: const LoginView());
                   },
-                  child: Text( "Sign in",
+                  child: const Text(
+                    "Sign in",
                   )),
             ],
           ),
@@ -84,4 +106,3 @@ class RegisterView extends StatelessWidget {
     );
   }
 }
-

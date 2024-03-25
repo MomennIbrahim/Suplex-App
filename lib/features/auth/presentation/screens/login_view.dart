@@ -27,7 +27,7 @@ class LoginView extends StatelessWidget {
               ),
               gapH(20.h),
               Text(
-                "User Name",
+                "User Name or Phone",
                 style: Styles.styleZilla17,
               ),
               gapH(12.h),
@@ -63,9 +63,11 @@ class LoginView extends StatelessWidget {
                       ))),
               Align(
                   alignment: Alignment.centerRight,
-                  child: CustomButton(text: "Sign In", onPressed: () {
-                    push(context: context, widget: const CustomBottomNav());
-                  })),
+                  child: CustomButton(
+                      text: "Sign In",
+                      onPressed: () {
+                        push(context: context, widget: const CustomBottomNav());
+                      })),
               TextButton(
                   onPressed: () {
                     push(context: context, widget: const RegisterView());

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/features/friends/presentation/views/reels_view.dart';
+
 import '../../../../core/constance.dart';
 import '../../../../core/utlis/styles.dart';
 
@@ -88,7 +89,7 @@ class FriendsView extends StatelessWidget {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  if(index == 0){
+                  if (index == 0) {
                     return Column(
                       children: [
                         Stack(
@@ -119,10 +120,13 @@ class FriendsView extends StatelessWidget {
                           ],
                         ),
                         gapH(2.h),
-                        Text("Create",style: Styles.style10,),
+                        Text(
+                          "Create",
+                          style: Styles.style10,
+                        ),
                       ],
                     );
-                  }else if(index == 1){
+                  } else if (index == 1) {
                     return Column(
                       children: [
                         Stack(
@@ -145,10 +149,13 @@ class FriendsView extends StatelessWidget {
                           ],
                         ),
                         gapH(2.h),
-                        Text("Radwa",style: Styles.style10,),
+                        Text(
+                          "Radwa",
+                          style: Styles.style10,
+                        ),
                       ],
                     );
-                  }else{
+                  } else {
                     return Column(
                       children: [
                         Stack(
@@ -171,11 +178,14 @@ class FriendsView extends StatelessWidget {
                           ],
                         ),
                         gapH(2.h),
-                        Text("Salma",style: Styles.style10,),
+                        Text(
+                          "Salma",
+                          style: Styles.style10,
+                        ),
                       ],
                     );
                   }
-                } ,
+                },
                 separatorBuilder: (context, index) => gapW(15.w),
                 itemCount: 3,
               ),
@@ -184,8 +194,11 @@ class FriendsView extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => GestureDetector(
-                onTap: (){
-                  push(context: context, widget: const ReelsView(),withNav: false);
+                onTap: () {
+                  push(
+                      context: context,
+                      widget: const ReelsView(),
+                      withNav: false);
                 },
                 child: AspectRatio(
                   aspectRatio: 16 / 20,
@@ -202,7 +215,6 @@ class FriendsView extends StatelessWidget {
               separatorBuilder: (context, index) => gapH(10.h),
               itemCount: 2,
             ),
-
           ],
         ),
       ),

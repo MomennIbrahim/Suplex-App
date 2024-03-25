@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:suplex/core/widgets/custom_text_form_field.dart';
+
 import '../../../../core/constance.dart';
 import '../../../../core/utlis/custom_size.dart';
 import '../../../../core/utlis/styles.dart';
@@ -249,123 +248,6 @@ class _ReelsViewState extends State<ReelsView> {
                       ],
                     ),
                     const Spacer(),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0.w),
-                        child: Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            const CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                  "https://a.storyblok.com/f/191576/1200x800/215e59568f/round_profil_picture_after_.webp"),
-                            ),
-                            Positioned(
-                              bottom: -2,
-                              left: 5,
-                              child: CircleAvatar(
-                                radius: 5.r,
-                                backgroundColor: Constance.kPrimaryColor,
-                                child: Icon(
-                                  Icons.add,
-                                  size: 10.r,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    gapH(7.h),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Icon(
-                          Icons.favorite,
-                          color: Colors.white,
-                          size: 37.r,
-                        ),
-                      ),
-                    ),
-                    gapH(7.h),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: SvgPicture.asset("assets/images/send.svg"),
-                      ),
-                    ),
-                    gapH(7.h),
-                    GestureDetector(
-                      onTap: () {
-                        showModalBottomSheet(
-                            context: context,
-                            backgroundColor: Colors.black87,
-                            builder: (BuildContext builderContext) {
-                              return Padding(
-                                padding:
-                                    EdgeInsets.only(bottom: 30.0.h, top: 10.h),
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: ListView(
-                                        children:
-                                            comments.map((e) => e).toList(),
-                                      ),
-                                    ),
-                                    gapH(20),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 12.0.w),
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(30.r),
-                                              child: SizedBox(
-                                                height: 45.h,
-                                                child: CustomTextFormField(
-                                                  controller:
-                                                      TextEditingController(),
-                                                  keyBoardType:
-                                                      TextInputType.text,
-                                                  hintText: "Add Comment",
-                                                  validatorText: "",
-                                                  fillColor: Colors.white12,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          gapW(10),
-                                          Icon(
-                                            Icons.favorite,
-                                            color: Colors.red,
-                                            size: 30.r,
-                                          ),
-                                          gapW(5),
-                                          SvgPicture.asset("assets/images/forword.svg",height: 25.h,)
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
-                            });
-                      },
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: SvgPicture.asset(
-                            "assets/images/comment.svg",
-                            height: 30.h,
-                          ),
-                        ),
-                      ),
-                    ),
                     gapH(MediaQuery.sizeOf(context).height * 0.05),
                     Align(
                       alignment: Alignment.centerLeft,
