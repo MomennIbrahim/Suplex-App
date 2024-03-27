@@ -239,7 +239,7 @@ class _ReelsViewState extends State<ReelsView> {
                                 "Following",
                                 style: Styles.styleWhite19,
                               ),
-                        Text("For You", style: Styles.style15),
+                        Text("Friends", style: Styles.style15),
                         Icon(
                           Icons.search,
                           color: Colors.white,

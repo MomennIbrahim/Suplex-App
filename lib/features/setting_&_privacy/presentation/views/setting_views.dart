@@ -4,10 +4,10 @@ import 'package:suplex/core/utlis/custom_navigator.dart';
 import 'package:suplex/core/utlis/custom_size.dart';
 import 'package:suplex/core/utlis/styles.dart';
 import 'package:suplex/core/widgets/back_icon.dart';
-import 'package:suplex/features/setting_&_privacy/payment_screen.dart';
 import 'package:suplex/features/setting_&_privacy/presentation/views/account_view.dart';
 import 'package:suplex/features/setting_&_privacy/presentation/views/privacy_security.dart';
 import 'package:suplex/features/setting_&_privacy/presentation/views/share_profile_view.dart';
+import 'package:suplex/features/setting_&_privacy/presentation/views/wallet_view.dart';
 
 class SettingViews extends StatelessWidget {
   const SettingViews({super.key});
@@ -52,9 +52,9 @@ class SettingViews extends StatelessWidget {
                 }),
             gapH(20),
             customContainerSetting(
-                text: "Payment",
+                text: "Wallet",
                 onPressed: () {
-                  push(context: context, widget: const PaymentScreen());
+                  push(context: context, widget: const WalletView());
                 }),
           ],
         ),

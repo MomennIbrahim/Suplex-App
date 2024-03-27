@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animate_do: ^3.3.4
+  checkbox_grouped: ^2.0.0
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter

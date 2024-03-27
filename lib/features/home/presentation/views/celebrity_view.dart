@@ -32,13 +32,8 @@ class CelebrityView extends StatelessWidget {
             ),
             gapH(20.h),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: double.maxFinite,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                            "https://khamsat.hsoubcdn.com/images/services/694800/f2b362b794037dcdd4b922ee389352b5.jpg"))),
                 child: Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 22.h),
@@ -46,7 +41,7 @@ class CelebrityView extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 12.w),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r),
-                      color: Colors.black.withOpacity(.4),
+                      color: Colors.black,
                     ),
                     child: SingleChildScrollView(
                       child: Stack(

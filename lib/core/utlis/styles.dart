@@ -94,6 +94,13 @@ abstract class Styles {
     fontFamily: "ZillaSlab",
   );
 
+   static TextStyle style18 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+    fontFamily: "Syne",
+    color: Colors.black,
+  );
+
   static TextStyle style19 = TextStyle(
     fontSize: 19.sp,
     fontWeight: FontWeight.w700,
