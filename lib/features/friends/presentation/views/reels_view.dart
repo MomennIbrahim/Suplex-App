@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/constance.dart';
 import '../../../../core/utlis/custom_size.dart';
@@ -246,6 +247,64 @@ class _ReelsViewState extends State<ReelsView> {
                           size: 35.r,
                         )
                       ],
+                    ),
+                    gapH(MediaQuery.sizeOf(context).height * .2),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                        child: Stack(
+                          alignment: Alignment.bottomRight,
+                          children: [
+                            CircleAvatar(
+                              radius: 20.r,
+                              backgroundImage: const NetworkImage(
+                                  "https://a.storyblok.com/f/191576/1200x800/215e59568f/round_profil_picture_after_.webp"),
+                            ),
+                            CircleAvatar(
+                              radius: 8.r,
+                              child: const Icon(
+                                Icons.add,
+                                size: 15,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    gapH(10),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                        child: SvgPicture.asset(
+                          "assets/images/forword.svg",
+                          height: 32.h,
+                        ),
+                      ),
+                    ),
+                    gapH(10),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                        child: Icon(
+                          Icons.favorite_outlined,
+                          color: Colors.white,
+                          size: 38.r,
+                        ),
+                      ),
+                    ),
+                    gapH(10),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+                        child: SvgPicture.asset(
+                          "assets/images/comment.svg",
+                          height: 35.h,
+                        ),
+                      ),
                     ),
                     const Spacer(),
                     gapH(MediaQuery.sizeOf(context).height * 0.05),
